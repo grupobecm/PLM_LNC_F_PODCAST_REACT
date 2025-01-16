@@ -1,0 +1,159 @@
+.mainsection.benefits{
+  background: var(--darkBlue);
+  padding: 3em 0;
+  box-sizing: border-box;
+}
+
+.mainsection.benefits .section-label {
+    font-family: 'Didact Gothyic', serif;
+    color: white;
+    font-size: 0.75rem;
+    margin: 3em 0 1.5em;
+}
+
+
+
+.mainsection.benefits .section-title, .mainsection.benefits .section-title span{
+  color: var(--white)
+}
+
+.mainsection.benefits 
+.section-title {
+  width: 90%;
+  max-width: 482px;
+  margin: 0 auto 2em;
+  text-align: center;
+  line-height: 1.15em;
+}
+
+
+
+.section-description {
+  width: 90%;
+  max-width: 351px;
+  margin: 0 auto;
+  color: var(--white);
+  font-family: 'Didact Gothyic', serif;
+  font-size: 1.25rem;
+  text-align: left;
+  font-weight: 400;
+}
+
+
+.section-carousel {
+  width: 100%;
+  max-width: 1720px;
+  margin: 3em auto;
+  padding: 0 2em;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+
+
+.section-carousel__item {
+    width: 95%; 
+    background: var(--white);
+    min-height: 408px;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+
+
+.section-carousel__item figure {
+    width: 100%;
+    margin: 0;
+}
+
+.section-carousel__item h5 {
+    font-family: "Didact Gothic", serif;
+    color: var(--brown);
+    margin: 0 0 1em;
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.item-description {
+    font-size: 1rem;
+    line-height: 1.25em;
+    font-family: 'Didact Gothic', serif;
+}
+
+.section-carousel__item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.benefits-footer__mobile {
+  width: 100%;
+  position: absolute;
+  bottom: -0.5em;
+}
+
+.benefits-footer__desk{
+  position: absolute;
+  bottom: -7em;
+  display: none;
+}
+
+.benefits-footer__mobile img,
+.benefits-footer__desk img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 600px) {
+  .benefits-footer__mobile {
+    display: none;
+  }   
+  .benefits-footer__desk{
+    display: block;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .benefits-footer__mobile {
+    display: none;
+  }   
+  .benefits-footer__desk{
+    display: block;
+    bottom: -5em;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+
+  .mainsection.episodes {
+    padding: 4em 0;
+  }
+
+  .benefits-footer__desk{
+    display: block;
+    bottom: -8em;
+  }
+
+  .section-carousel .slick-slider{
+    margin: 0 0 0 -4.5em;
+  }
+  
+  div[aria-hidden="true"] {
+    opacity: 0.5;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+
+  .section-carousel .slick-slider{
+    margin: 0 0 0 -5.5em;
+  }
+  
+  div[aria-hidden="true"] {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,17 @@
+.main-menu {
+  width: 100%;
+  height: 100vh;
+  background: var(--darkBlue);
+  display: block;
+}
+
+.menu-btn {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  z-index: 10;
+  background: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}

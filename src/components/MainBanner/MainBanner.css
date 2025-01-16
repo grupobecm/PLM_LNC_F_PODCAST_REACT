@@ -1,0 +1,107 @@
+.mainsection {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .mainsection.video{
+    height: 1200px;
+  }
+  
+  .layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    background: rgba(0, 0, 0, 0.45);
+    place-content: center;
+    color: var(--white);
+  }
+  
+  .layer h4 {
+      text-align: center;
+      font-size: 1.5rem;
+      font-family: "Didact Gothic", serif;
+      margin: 0 0 3em;
+  }
+  
+  .layer h4 span {
+    font-family: "Instrument Serif", serif;
+  }
+  
+  .layer p {
+    font-size: 1.3rem;
+    margin: 0 auto 20px;
+    width: 64%;
+    font-family: "Didact Gothic", serif;
+    line-height: 1.25em;
+  }
+  
+  .video__footer {
+    width: 100%;
+    height: 200px; 
+    background: url('../../assets/img/section_clip.png') repeat-x;
+    position: absolute;
+    bottom: -4em;
+  }
+  
+  
+  .mainsection__video  {
+      width: 100%;
+      height: 100%;
+    }
+  
+  .mainsection__video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .layer-title {
+    width: 90%;
+    font-size: 7.5rem;
+    text-align: center;
+    font-family: "Anton", serif;
+    text-align: center;
+    margin: 0 auto 40px;
+  }
+  
+  .subtitle {
+    width: 81%;
+    max-width: 400px;
+    margin: 0 auto 30px;
+    font-size: 2.25rem;
+    text-align: center;
+    font-family: "Didact Gothic", serif;
+  }
+  
+  .subtitle span{
+      font-family: "Instrument Serif", serif;
+  }
+  
+  .layer__button {
+      width: 250px;
+      height: 55px;
+      margin: 0 auto;
+      border-radius: 50px;
+      font-family: "Didact Gothic", serif;
+      font-weight: bold;
+  }
+  
+  @media screen and (min-width: 768px) {
+      .video__footer {
+        width: 100%;
+        height: 300px; 
+        background: url('../../assets/img/section_clip.png') repeat-x;
+        position: absolute;
+        bottom: -8em;
+      }
+
+      .layer-title {
+        width: 70%;
+      }
+  }
+
+  
