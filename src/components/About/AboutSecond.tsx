@@ -1,6 +1,3 @@
-import Testimonial3Img from '../../assets/img/testimonial-3.png';
-import Testimonial4Img from '../../assets/img/testimonial-4.png';
-
 const AboutSecond = () => {
   return (
     <div className="aboutSecond">
