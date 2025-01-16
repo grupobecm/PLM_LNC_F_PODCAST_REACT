@@ -1,11 +1,13 @@
 .main-menu {
   width: 100%;
-  height: 100vh;
   background: var(--darkBlue);
-  display: block;
+  display: flex;
+  align-items: center;
 }
 
 .menu-btn {
+  width: 45px;
+  height: 45px;
   position: absolute;
   top: 2em;
   right: 2em;
@@ -14,4 +16,152 @@
   border: 0;
   outline: none;
   cursor: pointer;
+}
+
+.menu-btn img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.main-menu__holder {
+  display: flex;
+  width: 90%;
+  max-width: 1800px;
+  margin: 0 auto 8em;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+}
+
+.main-menu__title {
+  color: var(--white);
+  font-size: 2.5rem;
+  font-family: "Anton", serif;
+}
+
+.main-menu__title span {
+  display: flex;
+  align-items: center;
+}
+
+.main-menu__title span em {
+  font-family: 'Didact Gothic';
+  font-size: 0.75rem;
+  display: inline-block;
+  padding-bottom: 1em;
+  margin: 0 0 0 1em;
+}
+
+.main-menu__left ul {
+  margin: 2em 0;
+}
+
+.main-menu__left ul li {
+  color: var(--white);
+  margin: 0 0 2em;
+}
+
+.main-menu__left ul li a {
+  font-size: 1.75rem;
+  font-family: "Anton", serif;
+}
+
+.main-menu__left {
+  width: 100%;
+  margin: 3em 0 0;
+}
+
+.main-menu__right {
+  width: 100%;
+}
+
+.main-menu__right h5 {
+  color: var(--white);
+  font-size: 0.7rem;
+  font-family: 'Didact Gothic';
+}
+
+.main-menu__videoFooter {
+  padding: 1em;
+  background: var(--white);
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+.main-menu__videoFooter h5 {
+  color: var(--darkBlue);
+  font-size: 1.75rem;
+  max-width: 245px;
+  margin: 1em 0;
+}
+
+.main-menu__videoCtrl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-menu__videoCtrl button {
+  font-size: 0.55rem;
+  width: 80px;
+  height: 40px;
+  font-weight: bold;
+  color: var(--white);
+  background: var(--darkBlue);
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
+
+.main-menu__videoCtrl .info em {
+  font-size: 0.85rem;
+  font-family: 'Didact Gothic';
+  color: var(--darkBlue);
+}
+
+.video-footer__about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.episodeNumber {
+  font-family: 'Instrument Serif', serif;
+  color: var(--darkBrown);
+}
+
+.episodeAuthor {
+  font-family: 'Didact Gothic';
+  color: var(--darkBlue);
+}
+
+.main-menu__videoHolder video {
+  width: 100%;
+  margin: 1em 0 0;
+}
+
+@media screen and (min-width: 768px) {
+  
+  .main-menu__holder {
+    margin: 4em auto;
+  }
+  
+  .main-menu__left ul li a {
+    font-size: 2.25rem;
+    font-family: "Anton", serif;
+  }
+
+  .main-menu__title {
+    font-size: 2.75rem;
+  }
+
+  .main-menu__left {
+    width: 49%;
+    margin: 5em 0 0;
+  }
+
+  .main-menu__right {
+    width: 49%;
+    max-width: 320px;
+  }
 }

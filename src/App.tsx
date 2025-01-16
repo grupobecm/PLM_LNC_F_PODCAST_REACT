@@ -6,10 +6,12 @@ import Footer from './components/Footer/Footer'
 import Intro from './components/Intro/Intro'
 import MainBanner from './components/MainBanner/MainBanner'
 import Manifesto from './components/Manifesto/Manifesto'
+import Menu from './components/Menu/Menu'
 
 function App() {
   return (
     <>
+      <Menu />
       <MainBanner />
       <Intro />
       <About />
