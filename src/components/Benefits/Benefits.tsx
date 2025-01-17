@@ -61,7 +61,7 @@ const Benefits:React.FC = () => {
 
   return (
     <>
-      <section className="mainsection benefits">
+      <section className="mainsection benefits" id="benefits">
         <em className="section-label"> BENEFITS </em>
         <h3 className="section-title">
           Why It’s Worth Living a<span> longer life and better. </span>

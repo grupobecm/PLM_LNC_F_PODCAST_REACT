@@ -1,5 +1,5 @@
 .mainsection.manifesto {
-  background: url(assets/img/manifesto/manifestobg_mobile.png) no-repeat 0 50%;
+  background: url('../../assets/img/manifesto/manifestobg_mobile.png') no-repeat 0 50%;
   background-size: 100% 100%;
   padding: 2em 0;
   box-sizing: border-box;

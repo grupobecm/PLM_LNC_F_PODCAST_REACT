@@ -1,9 +1,41 @@
+import { useEffect, useRef, useState } from 'react';
 import './MainBanner.css';
 import VideoMp4 from '../../assets/video/video_banner.mp4';
+import ReactPlayer from 'react-player';
+
 
 const MainBanner = () => {
+    const videoRef = useRef<ReactPlayer>(null);
+    const holderRef = useRef<HTMLElement>(null);
+    const [isPlayingVideo, setIsPlayingVideo] = useState<boolean>(true);
+
+    const handleScroll = () => {
+      const element = holderRef.current;
+      if (element) {
+        const videoPosition = element?.offsetTop;
+        const scrollPosition = window.scrollY;
+        //const rect = element.getBoundingClientRect();
+        if (scrollPosition > videoPosition) {
+          setIsPlayingVideo(true);
+        } else {
+          setIsPlayingVideo(false);
+        }
+      } 
+    };
+  
+    useEffect(()=>{
+      
+        
+      
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+        setIsPlayingVideo(false);
+      } 
+    },[]);
+    
     return (  
-        <section className="mainsection video">  
+        <section className="mainsection video" ref={holderRef}>  
         <div className="layer">
           <h4> INTRODUCING THE <span> PODCAST </span> </h4>
           <h1 className='layer-title'>
@@ -22,9 +54,17 @@ const MainBanner = () => {
           </button>
         </div>
         <div className="mainsection__video">
-          <video>
+          {/* <video ref={videoRef}>
             <source src={VideoMp4} type="video/mp4"  />
-          </video>
+          </video> */}
+
+          <ReactPlayer 
+            ref={videoRef} 
+            playing={isPlayingVideo}
+            url={VideoMp4}
+            width="100%" 
+            height="100%" 
+          />
         </div>
         <footer className='video__footer'></footer>
       </section>   

@@ -1,9 +1,35 @@
+import { useEffect, useRef, useState } from "react";
+import ReactPlayer from "react-player";
 import BannerVideo from '../../assets/video/video_banner.mp4';
 import './aboutThird.css'
 
 const AboutThird = () => {
+    const videoAboutRef = useRef<ReactPlayer>(null);
+    const holderAboutRef = useRef<HTMLDivElement>(null);
+    const [isPlayingVideoAbout, setIsPlayingVideoAbout] = useState<boolean>(false);
+
+    const handleScroll = () => {
+      const element = holderAboutRef.current;
+      
+      if (element) {
+        const elementTop = element.offsetTop;
+        //const windowHeight = window.innerHeight;
+        const scrollTop = window.scrollY;
+        if (scrollTop >= elementTop ) {
+          setIsPlayingVideoAbout(true);
+        } else {
+          setIsPlayingVideoAbout(false);
+        }
+      } 
+    }; 
+
+    useEffect(()=>{
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    },[]);
+    
     return (
-      <div className="aboutThird">
+      <div className="aboutThird" ref={holderAboutRef}>
         <div className="about-grid">
           <section className="about-left headline"></section>
           <section className="about-right">
@@ -16,9 +42,17 @@ const AboutThird = () => {
             </div>
 
             <div className="video_banner">
-              <video>
+              {/* <video>
                 <source src={BannerVideo} type="video/mp4" />
-              </video>
+              </video> */}
+
+              <ReactPlayer
+                ref={videoAboutRef}
+                playing={isPlayingVideoAbout}
+                url={BannerVideo}
+                width="100%"
+                height="100%"
+              />
             </div>
 
             <div className="about-right__txt">

@@ -6,7 +6,7 @@ import './About.css';
 const About = () => {
     return ( 
       <>
-        <section className="mainsection">
+        <section className="mainsection" id="about">
           <AboutFirst />
           <AboutSecond />
           <AboutThird />

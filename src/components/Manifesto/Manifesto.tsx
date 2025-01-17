@@ -3,7 +3,7 @@ import './Manifesto.css';
 const Manifesto = () => {
     return (
       <>
-        <section className="mainsection manifesto">
+        <section className="mainsection manifesto" id="manifesto">
           <h3 className="manifestoHeadline">
             "It's all about the balance and,
             <em> incredible moments in life." </em>

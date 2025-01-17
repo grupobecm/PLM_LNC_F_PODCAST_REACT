@@ -10,7 +10,7 @@ import EpisodesSlider from './EpisodesSlider';
 
 const Episodes = () => {
     return (  
-      <section className="mainsection episodes">
+      <section className="mainsection episodes" id="episodes">
         <em className="section-label"> 
           EPISODES
         </em>
