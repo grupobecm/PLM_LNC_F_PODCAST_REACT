@@ -15,7 +15,7 @@ const AboutThird = () => {
         const elementTop = element.offsetTop;
         //const windowHeight = window.innerHeight;
         const scrollTop = window.scrollY;
-        if (scrollTop >= elementTop ) {
+        if (scrollTop === elementTop ) {
           setIsPlayingVideoAbout(true);
         } else {
           setIsPlayingVideoAbout(false);

@@ -32,14 +32,16 @@
 }
 
 .intro{
-  margin: 5em 0 0;
+  margin: 3em 0;
 }
 
 .intro h3{
+  width: 90%;
+  max-width: 422px;
   text-align: center;
   font-family: "Didact Gothic", serif;
   font-size: 2rem;
-  margin: 0 0 1.5em;
+  margin: 0 auto 1.5em;
 }
 
 .intro h3 span{
@@ -47,8 +49,10 @@
 }
 
 .intro-txt{
+  max-width: 615px;
+  text-align: center;
   font-family: "Didact Gothic", serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   margin: 0 0 2em;
   padding: 1em;
   box-sizing: border-box;
@@ -102,22 +106,14 @@
 
 .intro-footer__logos {
   width: 90%;
-  max-width: 1216px;
+  max-width: 700px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.intro-footer__logos {
-  width: 90%;
-  max-width: 1216px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: row wrap;
-}
+
 
 .intro-footer__logos figure {
   width: 25%;
@@ -157,12 +153,13 @@
 @media screen and (min-width: 1024px) {
   .testimonials-grid {
     width: 90%;
-    max-width: 1220px;
+    max-width: 1000px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 480px 1fr;
-    grid-gap: 2em;
-  }
+    display: grid
+;
+    grid-template-columns: 1fr 380px 1fr;
+    grid-gap: 1.5em;
+}
 
   .testimonial-holder {
     margin: 0 0 3em;

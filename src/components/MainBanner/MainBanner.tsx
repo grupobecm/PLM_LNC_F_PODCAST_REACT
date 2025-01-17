@@ -15,32 +15,36 @@ const MainBanner = () => {
         const videoPosition = element?.offsetTop;
         const scrollPosition = window.scrollY;
         //const rect = element.getBoundingClientRect();
-        if (scrollPosition > videoPosition) {
+        if (scrollPosition === videoPosition) {
           setIsPlayingVideo(true);
         } else {
           setIsPlayingVideo(false);
         }
       } 
     };
+
+    useEffect(() => {
+      if (videoRef.current) {
+        setIsPlayingVideo(true);
+      }
+    }, []);
   
     useEffect(()=>{
-      
-        
-      
       window.addEventListener('scroll', handleScroll);
       return () => {
         window.removeEventListener('scroll', handleScroll);
         setIsPlayingVideo(false);
       } 
     },[]);
+
+    
     
     return (  
         <section className="mainsection video" ref={holderRef}>  
         <div className="layer">
           <h4> INTRODUCING THE <span> PODCAST </span> </h4>
           <h1 className='layer-title'>
-             THE MASTER   
-             <span> KEY </span>
+             <img src="assets/img/header/header-img.png" alt="" />
           </h1>
           <div className='subtitle'>
              Unlock the Secrets to a Longer, 

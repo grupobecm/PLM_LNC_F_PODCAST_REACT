@@ -56,11 +56,7 @@ const Menu: React.FC = () => {
             <div className="main-menu__holder">
               <section className="main-menu__left">
                 <div className="main-menu__title">
-                  THE MASTER
-                  <span>
-                    KEY
-                    <em> PODCAST </em>
-                  </span>
+                  <img src="assets/img/footer/footer-logo.png" alt="" />
                 </div>
                 <ul>
                   {navLinks.map((link) => (

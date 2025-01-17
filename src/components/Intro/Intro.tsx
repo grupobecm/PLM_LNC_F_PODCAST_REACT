@@ -21,7 +21,7 @@ const Intro = () => {
       const elementTop = element.offsetTop;
       const windowHeight = window.innerHeight;
       const scrollTop = window.scrollY;
-      if (scrollTop >= elementTop - windowHeight && scrollTop <= elementTop + element.clientHeight) {
+      if (scrollTop === elementTop - windowHeight) {
         setIsPlayingVideoIntro(true);
       } else {
         setIsPlayingVideoIntro(false);
@@ -77,7 +77,7 @@ const Intro = () => {
               playing={isPlayingVideoIntro}
               url={VideoIntro}
               width="100%"
-              height="100%"
+              height="85%"
             />
           </div>
         </aside>

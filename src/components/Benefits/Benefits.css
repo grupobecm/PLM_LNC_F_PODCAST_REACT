@@ -30,12 +30,12 @@
 
 .section-description {
   width: 90%;
-  max-width: 351px;
+  max-width: 664px;
   margin: 0 auto;
   color: var(--white);
   font-family: 'Didact Gothyic', serif;
   font-size: 1.25rem;
-  text-align: left;
+  text-align: center;
   font-weight: 400;
 }
 

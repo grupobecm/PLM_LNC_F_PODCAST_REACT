@@ -93,10 +93,12 @@
 .section-categories h5{
   font-family: "Instrument Serif", serif;
   margin: 0 0 1em;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
 }
 
 .section-categories p{
-  font-size: 0.75rem;   
+  font-size: 1rem;   
   line-height: 1.5em; 
   font-family: "Didact Gothic", serif;
 }
@@ -111,6 +113,10 @@
 .section-title span { 
   font-family: "Instrument Serif", serif;
   color: var(--brown);
+}
+
+.aboutSecond .section-title {
+  max-width: 506px;
 }
 
 

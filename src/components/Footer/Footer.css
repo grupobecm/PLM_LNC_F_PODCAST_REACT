@@ -26,6 +26,11 @@
   display: none;
 }
 
+.mainfooter__figure {
+  width: 200px;
+  margin: 0 auto;
+}
+
 .mainfooter__figure img {
   width: 100%;
   height: 100%;
