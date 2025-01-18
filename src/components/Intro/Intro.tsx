@@ -21,8 +21,9 @@ const Intro = () => {
       const elementTop = element.offsetTop;
       const windowHeight = window.innerHeight;
       const scrollTop = window.scrollY;
-      if (scrollTop === elementTop - windowHeight) {
+      if (scrollTop >= elementTop - windowHeight && scrollTop <= elementTop + element.clientHeight) {
         setIsPlayingVideoIntro(true);
+        console.log('llegó');
       } else {
         setIsPlayingVideoIntro(false);
       }

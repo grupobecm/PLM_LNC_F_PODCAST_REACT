@@ -8,6 +8,7 @@ const MainBanner = () => {
     const videoRef = useRef<ReactPlayer>(null);
     const holderRef = useRef<HTMLElement>(null);
     const [isPlayingVideo, setIsPlayingVideo] = useState<boolean>(true);
+    const [isMuted, setIsMuted] = useState<boolean>(true);
 
     const handleScroll = () => {
       const element = holderRef.current;
@@ -19,15 +20,18 @@ const MainBanner = () => {
           setIsPlayingVideo(true);
         } else {
           setIsPlayingVideo(false);
+          setIsMuted(true);
         }
       } 
     };
 
-    useEffect(() => {
-      if (videoRef.current) {
-        setIsPlayingVideo(true);
-      }
-    }, []);
+    const handleReady = () => {
+      setIsPlayingVideo(true);
+    }
+
+    const handlePlay = () => {
+      setIsMuted(true);
+    }
   
     useEffect(()=>{
       window.addEventListener('scroll', handleScroll);
@@ -68,6 +72,10 @@ const MainBanner = () => {
             url={VideoMp4}
             width="100%" 
             height="100%" 
+            onReady={handleReady}
+            onStart={handlePlay}
+            volume={1}
+            muted={isMuted}
           />
         </div>
         <footer className='video__footer'></footer>

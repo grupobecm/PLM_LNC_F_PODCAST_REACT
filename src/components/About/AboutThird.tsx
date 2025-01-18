@@ -7,30 +7,27 @@ const AboutThird = () => {
     const videoAboutRef = useRef<ReactPlayer>(null);
     const holderAboutRef = useRef<HTMLDivElement>(null);
     const [isPlayingVideoAbout, setIsPlayingVideoAbout] = useState<boolean>(false);
-
     const handleScroll = () => {
       const element = holderAboutRef.current;
-      
       if (element) {
         const elementTop = element.offsetTop;
-        //const windowHeight = window.innerHeight;
         const scrollTop = window.scrollY;
-        if (scrollTop === elementTop ) {
+
+        if (scrollTop >= elementTop + 200  ) {
           setIsPlayingVideoAbout(true);
         } else {
           setIsPlayingVideoAbout(false);
         }
       } 
-    }; 
-
+    };
     useEffect(()=>{
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
     },[]);
     
     return (
-      <div className="aboutThird" ref={holderAboutRef}>
-        <div className="about-grid">
+      <div className="aboutThird"  ref={holderAboutRef}>
+        <div className="about-grid" >
           <section className="about-left headline"></section>
           <section className="about-right">
             <div className="about-right__txt">
@@ -42,14 +39,12 @@ const AboutThird = () => {
             </div>
 
             <div className="video_banner">
-              {/* <video>
-                <source src={BannerVideo} type="video/mp4" />
-              </video> */}
-
               <ReactPlayer
                 ref={videoAboutRef}
                 playing={isPlayingVideoAbout}
                 url={BannerVideo}
+                volume={1}
+                muted={true}
                 width="100%"
                 height="100%"
               />
