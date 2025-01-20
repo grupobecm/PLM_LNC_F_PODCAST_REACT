@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import useVideoContext from "../../hooks/useVideoContext";
 import ReactPlayer from "react-player";
 import VideoIntro from "../../assets/video/video_intro.mp4";
 import starImg from "../../assets/img/stars.png";
@@ -9,48 +8,48 @@ import logoBloomberg from "../../assets/img/logo_bloomberg.png";
 import logoForbes from "../../assets/img/logo_forbes.png";
 import "./intro.css";
 
-
 const Intro = () => {
   const videoIntroRef = useRef<ReactPlayer>(null);
   const holderIntoRef = useRef<HTMLDivElement>(null);
-  const [isPlayingVideoIntro, setIsPlayingVideoIntro] = useState<boolean>(false);
-  const {isOpenMenu} = useVideoContext();
-  
+  const [isPlayingVideoIntro, setIsPlayingVideoIntro] =
+    useState<boolean>(false);
+
   const handleScroll = () => {
     const element = holderIntoRef.current;
-    
+
     if (element) {
-      const rect = element.getBoundingClientRect();
-      if (rect.top >= 0 && rect.top <= window.innerHeight) {
+      const elementTop = element.offsetTop;
+      const windowHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
+      if (scrollTop > 0 && scrollTop <= elementTop + element.clientHeight) {
         setIsPlayingVideoIntro(true);
       } else {
         setIsPlayingVideoIntro(false);
       }
-    } 
-  }; 
+    }
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <section className="mainsection intro"  id="intro">
+    <section className="mainsection intro" id="intro" ref={holderIntoRef}>
       <em className="section-label"> INTRO </em>
       <h3>
-        Why Longevity Should
-        <span> BeEveryone's Goal. </span>
+        Introducing Longevity
+        <span>
+          The secret to preventing disease and living a longer and healthier
+          life.
+        </span>
       </h3>
       <p className="intro-txt">
-        Longevity isn’t about just living longer—it’s about living better.
-        Prevent disease, embrace innovation, and enjoy life to the fullest.
+        Isn’t just about adding years to our lives; it´s about adding    life to our years.
       </p>
-      <div className="testimonials-grid" >
+      <div className="testimonials-grid">
         <aside className="first">
           <div className="testimonial-holder">
-            <div className="testimonial-holder__stars">
-              <img src={starImg} />
-            </div>
             <p>
               Preventing disease and focusing on living well every day has
               brought so much clarity and peace to my life.
@@ -59,9 +58,6 @@ const Intro = () => {
           </div>
 
           <div className="testimonial-holder">
-            <div className="testimonial-holder__stars">
-              <img src={starImg} />
-            </div>
             <p>
               "Longevity is about quality, not just quantity. Staying active and
               healthy is my greatest gift to myself."
@@ -71,10 +67,10 @@ const Intro = () => {
         </aside>
 
         <aside className="video-aside">
-          <div className="video-holder" ref={holderIntoRef}>
+          <div className="video-holder">
             <ReactPlayer
               ref={videoIntroRef}
-              playing={isPlayingVideoIntro && isOpenMenu === false}
+              playing={isPlayingVideoIntro}
               url={VideoIntro}
               width="100%"
               height="85%"
@@ -84,9 +80,6 @@ const Intro = () => {
 
         <aside className="last">
           <div className="testimonial-holder">
-            <div className="testimonial-holder__stars">
-              <img src={starImg} />
-            </div>
             <p>
               Longevity isn’t about just living longer—it’s about living a more
               fulfilling life. Investing in wellness has transformed how I view
@@ -96,9 +89,6 @@ const Intro = () => {
           </div>
 
           <div className="testimonial-holder">
-            <div className="testimonial-holder__stars">
-              <img src={starImg} />
-            </div>
             <p>
               "Embracing innovation and prioritizing health is the ultimate way
               to ensure happiness and success in life."

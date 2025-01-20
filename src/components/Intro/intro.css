@@ -46,6 +46,9 @@
 
 .intro h3 span{
   font-family: "Instrument Serif", serif;
+  display: block;
+  font-style: italic;
+  margin: 20px 0 0;
 }
 
 .intro-txt{

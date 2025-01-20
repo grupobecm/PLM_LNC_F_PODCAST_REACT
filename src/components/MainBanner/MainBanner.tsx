@@ -4,19 +4,18 @@ import VideoMp4 from "../../assets/video/video_banner.mp4";
 import ReactPlayer from "react-player";
 import useVideoContext from "../../hooks/useVideoContext";
 
-
 const MainBanner = () => {
   const videoRef = useRef<ReactPlayer>(null);
   const holderRef = useRef<HTMLElement>(null);
   const [isPlayingVideo, setIsPlayingVideo] = useState<boolean>(true);
   const [isMuted, setIsMuted] = useState<boolean>(true);
-  const {isOpenMenu} = useVideoContext();
+  const { isOpenMenu } = useVideoContext();
 
   const handleScroll = () => {
     const element = holderRef.current;
     if (element) {
       const rect = element.getBoundingClientRect();
-      if (rect.top >= 0 && rect.top <= window.innerHeight ) {
+      if (rect.top === 0) {
         setIsPlayingVideo(true);
         setIsMuted(false);
       } else {
@@ -28,19 +27,17 @@ const MainBanner = () => {
 
   const handleDocumentClick = () => {
     setIsMuted(!isMuted);
-  }
+  };
 
   const handleReady = () => {
     setIsPlayingVideo(true);
   };
-   
-  useEffect(()=>{
-    if(holderRef.current && isOpenMenu === false) {
-      holderRef.current?.addEventListener('click',handleDocumentClick )
-    }
-  },[]);
 
-  
+  useEffect(() => {
+    if (holderRef.current && isOpenMenu === false) {
+      holderRef.current?.addEventListener("click", handleDocumentClick);
+    }
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -53,7 +50,8 @@ const MainBanner = () => {
 
   return (
     <section className="mainsection video" ref={holderRef}>
-      <div className="layer">
+      <div className="layer"></div>
+      <div className="videoTitle">
         <h4>
           {" "}
           INTRODUCING THE <span> PODCAST </span>{" "}
