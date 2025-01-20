@@ -45,7 +45,7 @@ const Intro = () => {
         Longevity isn’t about just living longer—it’s about living better.
         Prevent disease, embrace innovation, and enjoy life to the fullest.
       </p>
-      <div className="testimonials-grid" ref={holderIntoRef}>
+      <div className="testimonials-grid" >
         <aside className="first">
           <div className="testimonial-holder">
             <div className="testimonial-holder__stars">
@@ -71,7 +71,7 @@ const Intro = () => {
         </aside>
 
         <aside className="video-aside">
-          <div className="video-holder" >
+          <div className="video-holder" ref={holderIntoRef}>
             <ReactPlayer
               ref={videoIntroRef}
               playing={isPlayingVideoIntro && isOpenMenu === false}
