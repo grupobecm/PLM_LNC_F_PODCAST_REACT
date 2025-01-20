@@ -2,13 +2,17 @@ import { useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player";
 import ericVerdinVideo from "../../assets/video/episodes/eric_verdin.mov";
 import "./Menu.css";
-
+import useVideoContext from "../../hooks/useVideoContext";
 
 const Menu: React.FC = () => {
-  const [isOpenMenu, setIsOpenMenu] = useState(false);
+  
   const [isMenuVideoPlaying, setIsMenuVideoPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
 
+
+  const videoHolderRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<ReactPlayer>(null);
+  const {isOpenMenu, handleToggleMenu} = useVideoContext();
 
   const navLinks = [
     { id: "intro", text: "Intro" },
@@ -19,22 +23,29 @@ const Menu: React.FC = () => {
     // ... otros enlaces
   ];
 
-  const handleToggleMenu = () => {
-    setIsOpenMenu(!isOpenMenu);
-    setIsMenuVideoPlaying(!isMenuVideoPlaying);
-  };
+  const handleClick = () => {
+    setIsMuted(!isMuted);
+  }
+
+  useEffect(()=>{
+    if(videoHolderRef.current){
+      videoHolderRef.current?.addEventListener('click',handleClick );
+    }
+  })
 
   useEffect(() => {
     return () => {
-      setIsMenuVideoPlaying(false);
+      if(isOpenMenu) {
+        setIsMenuVideoPlaying(true);
+      }
     };
-  }, []);
+  }, [isOpenMenu]);
 
   const handleScroll = (id:string) => {
     const element = document.getElementById(id);
     if(element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpenMenu(false);
+      handleToggleMenu();
     }
   };
 
@@ -81,6 +92,8 @@ const Menu: React.FC = () => {
                     url={ericVerdinVideo}
                     width="100%"
                     height="100%"
+                    volume={1}
+                    muted={isMuted}
                   />
                   <footer className="main-menu__videoFooter">
                     <div className="video-footer__about">

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import useVideoContext from "../../hooks/useVideoContext";
 import ReactPlayer from "react-player";
 import VideoIntro from "../../assets/video/video_intro.mp4";
 import starImg from "../../assets/img/stars.png";
@@ -13,17 +14,15 @@ const Intro = () => {
   const videoIntroRef = useRef<ReactPlayer>(null);
   const holderIntoRef = useRef<HTMLDivElement>(null);
   const [isPlayingVideoIntro, setIsPlayingVideoIntro] = useState<boolean>(false);
+  const {isOpenMenu} = useVideoContext();
   
   const handleScroll = () => {
     const element = holderIntoRef.current;
     
     if (element) {
-      const elementTop = element.offsetTop;
-      const windowHeight = window.innerHeight;
-      const scrollTop = window.scrollY;
-      if (scrollTop >= elementTop - windowHeight && scrollTop <= elementTop + element.clientHeight) {
+      const rect = element.getBoundingClientRect();
+      if (rect.top >= 0 && rect.top <= window.innerHeight) {
         setIsPlayingVideoIntro(true);
-        console.log('llegó');
       } else {
         setIsPlayingVideoIntro(false);
       }
@@ -36,7 +35,7 @@ const Intro = () => {
   }, []);
 
   return (
-    <section className="mainsection intro" ref={holderIntoRef} id="intro">
+    <section className="mainsection intro"  id="intro">
       <em className="section-label"> INTRO </em>
       <h3>
         Why Longevity Should
@@ -46,7 +45,7 @@ const Intro = () => {
         Longevity isn’t about just living longer—it’s about living better.
         Prevent disease, embrace innovation, and enjoy life to the fullest.
       </p>
-      <div className="testimonials-grid">
+      <div className="testimonials-grid" ref={holderIntoRef}>
         <aside className="first">
           <div className="testimonial-holder">
             <div className="testimonial-holder__stars">
@@ -75,7 +74,7 @@ const Intro = () => {
           <div className="video-holder" >
             <ReactPlayer
               ref={videoIntroRef}
-              playing={isPlayingVideoIntro}
+              playing={isPlayingVideoIntro && isOpenMenu === false}
               url={VideoIntro}
               width="100%"
               height="85%"

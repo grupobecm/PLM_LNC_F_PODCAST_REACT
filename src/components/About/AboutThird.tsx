@@ -1,19 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player";
 import BannerVideo from '../../assets/video/video_banner.mp4';
+
 import './aboutThird.css'
+import useVideoContext from "../../hooks/useVideoContext";
 
 const AboutThird = () => {
     const videoAboutRef = useRef<ReactPlayer>(null);
     const holderAboutRef = useRef<HTMLDivElement>(null);
     const [isPlayingVideoAbout, setIsPlayingVideoAbout] = useState<boolean>(false);
+    const {isOpenMenu} = useVideoContext();
     const handleScroll = () => {
       const element = holderAboutRef.current;
       if (element) {
-        const elementTop = element.offsetTop;
-        const scrollTop = window.scrollY;
-
-        if (scrollTop >= elementTop + 200  ) {
+        const rect = element.getBoundingClientRect(); 
+        if (rect.top >= 0 && rect.top <= window.innerHeight  ) {
           setIsPlayingVideoAbout(true);
         } else {
           setIsPlayingVideoAbout(false);
@@ -26,7 +27,7 @@ const AboutThird = () => {
     },[]);
     
     return (
-      <div className="aboutThird"  ref={holderAboutRef}>
+      <div className="aboutThird">
         <div className="about-grid" >
           <section className="about-left headline"></section>
           <section className="about-right">
@@ -38,13 +39,11 @@ const AboutThird = () => {
               with rest, joy, and nourishment.
             </div>
 
-            <div className="video_banner">
+            <div className="video_banner" ref={holderAboutRef}>
               <ReactPlayer
                 ref={videoAboutRef}
-                playing={isPlayingVideoAbout}
+                playing={isPlayingVideoAbout && isOpenMenu === false}
                 url={BannerVideo}
-                volume={1}
-                muted={true}
                 width="100%"
                 height="100%"
               />
