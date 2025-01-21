@@ -1,31 +1,13 @@
-import { useEffect, useRef, useState } from "react";
-import ReactPlayer from "react-player";
-import BannerVideo from "../../assets/video/video_banner.mp4";
+import { useEffect, useRef } from "react";
 
 import "./aboutThird.css";
-import useVideoContext from "../../hooks/useVideoContext";
+
 
 const AboutThird = () => {
-  const videoAboutRef = useRef<ReactPlayer>(null);
+  
   const holderAboutRef = useRef<HTMLDivElement>(null);
-  const [isPlayingVideoAbout, setIsPlayingVideoAbout] =
-    useState<boolean>(false);
-  const { isOpenMenu } = useVideoContext();
-  const handleScroll = () => {
-    const element = holderAboutRef.current;
-    if (element) {
-      const rect = element.getBoundingClientRect();
-      if (rect.top >= 0 && rect.top <= window.innerHeight) {
-        setIsPlayingVideoAbout(true);
-      } else {
-        setIsPlayingVideoAbout(false);
-      }
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  
+ 
 
   return (
     <div className="aboutThird">
