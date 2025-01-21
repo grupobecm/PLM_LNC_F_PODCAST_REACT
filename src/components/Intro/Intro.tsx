@@ -1,20 +1,16 @@
-import { useEffect, useRef, useState } from "react";
-import ReactPlayer from "react-player";
-import VideoIntro from "../../assets/video/video_intro.mp4";
-import starImg from "../../assets/img/stars.png";
-import logoVogue from "../../assets/img/logo_vogue.svg";
-import logoBazaar from "../../assets/img/logo_bazaar.png";
-import logoBloomberg from "../../assets/img/logo_bloomberg.png";
-import logoForbes from "../../assets/img/logo_forbes.png";
+import { useRef } from "react";
 import "./intro.css";
+import VideoSlider from "./VideoSlider";
+import TestimonialsSlider from "./TestimonialsSlider";
+import FeaturedSlider from "./FeaturedSlider";
 
 const Intro = () => {
-  const videoIntroRef = useRef<ReactPlayer>(null);
+  
   const holderIntoRef = useRef<HTMLDivElement>(null);
-  const [isPlayingVideoIntro, setIsPlayingVideoIntro] =
-    useState<boolean>(false);
+ /*  const [isPlayingVideoIntro, setIsPlayingVideoIntro] =
+    useState<boolean>(false); */
 
-  const handleScroll = () => {
+  /* const handleScroll = () => {
     const element = holderIntoRef.current;
 
     if (element) {
@@ -32,11 +28,10 @@ const Intro = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, []); */
 
   return (
     <section className="mainsection intro" id="intro" ref={holderIntoRef}>
-      <em className="section-label"> INTRO </em>
       <h3>
         Introducing Longevity
         <span>
@@ -45,8 +40,15 @@ const Intro = () => {
         </span>
       </h3>
       <p className="intro-txt">
-        Isn’t just about adding years to our lives; it´s about adding    life to our years.
+        Isn’t just about adding years to our lives; it´s about adding life to
+        our years.
       </p>
+
+      <div className="mobile-testimonials">
+        <VideoSlider />
+        <TestimonialsSlider />
+      </div>
+
       <div className="testimonials-grid">
         <aside className="first">
           <div className="testimonial-holder">
@@ -67,15 +69,7 @@ const Intro = () => {
         </aside>
 
         <aside className="video-aside">
-          <div className="video-holder">
-            <ReactPlayer
-              ref={videoIntroRef}
-              playing={isPlayingVideoIntro}
-              url={VideoIntro}
-              width="100%"
-              height="85%"
-            />
-          </div>
+          <VideoSlider />
         </aside>
 
         <aside className="last">
@@ -100,23 +94,7 @@ const Intro = () => {
 
       <footer className="intro-footer">
         <h4> Featured By </h4>
-        <div className="intro-footer__logos">
-          <figure>
-            <img src={logoVogue} alt="Vogue" />
-          </figure>
-
-          <figure>
-            <img src={logoBazaar} alt="Bazzar" />
-          </figure>
-
-          <figure>
-            <img src={logoBloomberg} alt="Bazzar" />
-          </figure>
-
-          <figure>
-            <img src={logoForbes} alt="Bazzar" />
-          </figure>
-        </div>
+        <FeaturedSlider />
       </footer>
     </section>
   );

@@ -10,19 +10,16 @@ const AboutFirst = () => {
            </div>
          </section>
          <section className="about-right info">
-           <em className="section-label">ABOUT</em>
            <h3>
              Unlock the Secrets to a Longer, <span> Better Life. </span>
            </h3>
            <div className="section-resume">
              <p>
-               Elen Capri, a renowned entrepreneur featured in Forbes, Vogue,
-               GQ, and Bazaar, brings her passion for health and longevity to
-               life through The Master Key.
+               Unlock your potential with our platform! We believe that you hold the master key to your life, and we have the right tools to help you unlock it. Our platform connects scientific information in an easy way to understand, bringing together experts from different fields, such as scientists, doctors, technology experts, celebrities, athletes, and personalities. With our professional approach, you can learn how to make the most of your life.
              </p>
            </div>
 
-           <div className="section-categories">
+           {/* <div className="section-categories">
              <div>
                <h5 className='blue-txt'> Humanitarian Efforts </h5>
                <p>
@@ -58,7 +55,7 @@ const AboutFirst = () => {
                  potential of health and longevity solutions for everyone.
                </p>
              </div>
-           </div>
+           </div> */}
          </section>
        </div>
      </div>

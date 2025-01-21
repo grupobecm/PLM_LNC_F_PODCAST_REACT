@@ -81,7 +81,7 @@ const MainBanner = () => {
           muted={isMuted}
         />
       </div>
-      <footer className="video__footer"></footer>
+      {/* <footer className="video__footer"></footer> */}
     </section>
   );
 };

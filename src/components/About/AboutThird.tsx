@@ -1,70 +1,107 @@
 import { useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player";
-import BannerVideo from '../../assets/video/video_banner.mp4';
+import BannerVideo from "../../assets/video/video_banner.mp4";
 
-import './aboutThird.css'
+import "./aboutThird.css";
 import useVideoContext from "../../hooks/useVideoContext";
 
 const AboutThird = () => {
-    const videoAboutRef = useRef<ReactPlayer>(null);
-    const holderAboutRef = useRef<HTMLDivElement>(null);
-    const [isPlayingVideoAbout, setIsPlayingVideoAbout] = useState<boolean>(false);
-    const {isOpenMenu} = useVideoContext();
-    const handleScroll = () => {
-      const element = holderAboutRef.current;
-      if (element) {
-        const rect = element.getBoundingClientRect(); 
-        if (rect.top >= 0 && rect.top <= window.innerHeight  ) {
-          setIsPlayingVideoAbout(true);
-        } else {
-          setIsPlayingVideoAbout(false);
-        }
-      } 
-    };
-    useEffect(()=>{
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    },[]);
-    
-    return (
-      <div className="aboutThird">
-        <div className="about-grid" >
-          <section className="about-left headline"></section>
-          <section className="about-right">
-            <div className="about-right__txt">
-              A Better Life Manifesto Live with purpose and let your values
-              guide you. <b> The Key Master </b> Podcast is about Embrace growth
-              by seeking challenges that inspire learning. Cultivate gratitude
-              for life’s small and grand moments, and care for your well-being
-              with rest, joy, and nourishment.
+  const videoAboutRef = useRef<ReactPlayer>(null);
+  const holderAboutRef = useRef<HTMLDivElement>(null);
+  const [isPlayingVideoAbout, setIsPlayingVideoAbout] =
+    useState<boolean>(false);
+  const { isOpenMenu } = useVideoContext();
+  const handleScroll = () => {
+    const element = holderAboutRef.current;
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      if (rect.top >= 0 && rect.top <= window.innerHeight) {
+        setIsPlayingVideoAbout(true);
+      } else {
+        setIsPlayingVideoAbout(false);
+      }
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className="aboutThird">
+      <div className="about-grid">
+        <section className="about-left headline">
+          <h4>
+             Health is for everyone, 
+             <span> not just the wealthy. </span>
+          </h4>
+       
+        </section>
+        <section className="about-right">
+          <h3>
+            A Better Life Manifesto.
+            <span style={{ display: "block" }}> Values </span>
+          </h3>
+          <div className="section-categories">
+            <div>
+              <h5 className="brown-txt">Timeless</h5>
+              <p>
+                Time is the most precious thing we have, as it is something we
+                cannot buy, and once it is gone, it can never be regained.
+              </p>
+            </div>
+            <div>
+              <h5 className="brown-txt">Ageless</h5>
+              <p>
+                Age should not dictate our abilities or experiences. What truly
+                matters is the knowledge and experiences we hold within.
+              </p>
+            </div>
+            <div>
+              <h5 className="brown-txt">Priceless</h5>
+              <p>
+                The most valuable possessions we should hold are our core
+                values, as they shape and guide our hearts and souls.
+              </p>
+            </div>
+            <div>
+              <h5 className="brown-txt">Limitless</h5>
+              <p>
+                With an emphasis on education and mentorship, Elen equips women
+                with the skills and resources they need to achieve their goals,
+                unlocking potential and building brighter futures.
+              </p>
             </div>
 
-            <div className="video_banner" ref={holderAboutRef}>
-              <ReactPlayer
-                ref={videoAboutRef}
-                playing={isPlayingVideoAbout && isOpenMenu === false}
-                url={BannerVideo}
-                width="100%"
-                height="100%"
-              />
+            <div>
+              <h5 className="brown-txt">Science</h5>
+              <p>
+                Science is a constant pursuit of discovery, whether it be in
+                understanding our world or improving our lives through
+                innovation and healing.
+              </p>
             </div>
 
-            <div className="about-right__txt">
-              Foster deep, uplifting connections by listening and offering
-              compassion. Act with integrity and let your authenticity shine in
-              every action. Stay present and practice mindfulness to anchor
-              yourself in the moment. Contribute to the greater good, knowing
-              every kind act creates ripples of change. Choose joy deliberately,
-              redefine success by fulfillment and authenticity, and take
-              responsibility for shaping your path. Dream boldly and imagine a
-              life beyond limits. This manifesto is a call to live
-              intentionally, love deeply, and leave a meaningful legacy. A
-              better life begins with the choices you make today.
+            <div>
+              <h5 className="brown-txt">Spreading love</h5>
+              <p>
+                Storytellers have the ability to impact and change the lives of
+                many through their words of love and knowledge.
+              </p>
             </div>
-          </section>
-        </div>
+
+            <div>
+              <h5 className="brown-txt">Spiritual</h5>
+              <p>
+                Faith is a driving force that we may not always see, but it
+                gives us the courage to overcome fear and obstacles.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
-    );
-}
- 
+    </div>
+  );
+};
+
 export default AboutThird;

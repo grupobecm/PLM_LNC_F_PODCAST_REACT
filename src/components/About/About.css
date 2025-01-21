@@ -4,7 +4,7 @@
 }
 
 
-.about-left.blue { 
+.about-left.blue {
   background: var(--blue);
   display: flex;
   justify-content: center;
@@ -23,33 +23,38 @@
 }
 
 .carousel-holder figure {
-  width: 100%; 
+  width: 100%;
   height: 100%;
 }
 
-.carousel-holder figure img{
+.carousel-holder figure img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.blue-txt{
+.blue-txt {
   color: var(--blue);
   font-weight: bold;
 }
 
-.brown-txt{
+.brown-txt {
   color: var(--brown);
   font-weight: bold;
+}
+
+.about-left.info {
+  order: 2;
 }
 
 .about-right.brown {
   background: var(--brown);
   display: flex;
-  height: 550px; 
+  height: 550px;
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
+  order: 1;
 }
 
 .section-label {
@@ -61,58 +66,51 @@
 }
 
 .about-right h3 {
-  font-size: 2.5rem;
-  font-family: "Didact Gothic", serif;
+  font-size: 1.75rem;
+  font-family: "futura Std Medium", serif;
   margin: 0 0 40px;
-} 
-
-.about-right h3 span{
-  font-family: "Instrument Serif", serif;  
+  color: var(--darkBlue);
+  max-width: 300px;
 }
-  
+
+.about-right h3 span {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+}
+
 .section-resume p {
   font-size: 1rem;
-  font-family: "Didact Gothic", serif;
+  font-family: "futuraStdLight", serif;
   margin: 0 0 40px;
   line-height: 1.5em;
-} 
+  font-weight: 400;
+  color: var(--darkBlue);
+}
 
 
-  
-.info{
+
+.info {
   padding: 2em;
   box-sizing: border-box;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-.section-categories {
- display: grid;
- grid-template-columns: 1fr;
- grid-gap: 1.5em;
-}
 
-.section-categories h5{
-  font-family: "Instrument Serif", serif;
-  margin: 0 0 1em;
-  letter-spacing: 2px;
-  font-size: 1.1rem;
-}
-
-.section-categories p{
-  font-size: 1rem;   
-  line-height: 1.5em; 
-  font-family: "Didact Gothic", serif;
-}
 
 .section-title {
   font-size: 2.5rem;
-  font-family: 'Didact Gothic', serif;
+  font-family: 'futura Std Medium', serif;
   color: var(--blue);
   margin: 0 0 1.5em;
 }
 
-.section-title span { 
+.section-title span {
   font-family: "Instrument Serif", serif;
   color: var(--brown);
+  font-style: italic;
 }
 
 .aboutSecond .section-title {
@@ -125,22 +123,21 @@
   .about-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-  }  
+  }
 
   .section-resume {
     width: 90%;
     max-width: 615px;
   }
-    
-  .about-left.blue, .about-right.brown {
+
+  .about-left.blue,
+  .about-right.brown {
     height: 100%;
   }
 
-  
-  
-  .section-categories div{
-    min-height: 160px;
-  }
+
+
+
 
   .carousel-holder {
     display: block;
@@ -151,63 +148,22 @@
     height: 652px;
   }
 
-    
+  .about-left.info {
+    order: 1;
+  }
+
+  .about-right.brown {
+    order: 2;
+  }
+
+
 }
 
 
 
 @media screen and (min-width: 1200px) {
-  
-  .about-left.blue, .about-right.brown {
+  .about-left.blue,
+  .about-right.brown {
     height: 900px;
   }
-
-  .section-categories {    
-    width: 90%;
-    max-width: 710px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0;
-  }
-
-  .section-categories div:first-child {
-    border-bottom: 1px solid var(--lightGray);
-    border-right: 1px solid var(--lightGray); 
-   }
-
-   .section-categories div:nth-child(2) {
-    border-bottom: 1px solid var(--lightGray);
-   }
-
-   .section-categories div:nth-child(3) {
-    border-right: 1px solid var(--lightGray);  
-   }
-   
-   .section-categories div:first-child, 
-   .section-categories div:nth-child(3) {
-     padding: 0 2em 2em 0;
-     box-sizing: border-box;
-   }
-
-   .section-categories div:nth-child(2) {
-    border-bottom: 1px solid var(--lightGray);
-    padding: 0 0 2em 2em;
-   }
-
-   .section-categories div:nth-child(2)
-   {
-    border-bottom: 1px solid var(--lightGray);
-    padding: 0 0 2em 2em;
-   }
-
-   .section-categories div:nth-child(3){
-     padding: 2em 2em 0 0;
-   }
-
-   .section-categories div:nth-child(4){
-     padding: 2em 0 0 2em;
-   }
-
-
-
 }
-

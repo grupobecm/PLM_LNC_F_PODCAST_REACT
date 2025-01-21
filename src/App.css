@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Didact+Gothic&family=Instrument+Serif:ital@0;1&display=swap');
-
+@import url('./global.css');
 :root{
   --white: #f8f7fc;
   --blue: #073A71E5;

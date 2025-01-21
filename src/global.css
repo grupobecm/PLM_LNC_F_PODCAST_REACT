@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Didact+Gothic&family=Instrument+Serif:ital@0;1&display=swap');
+
+@font-face {
+  font-family:'futura Std Medium';
+  src: url('../src/assets/fonts/futurastdmedium/futurastdmedium-webfont.woff') format('woff'),
+  url('../src/assets/fonts/futurastdmedium/futurastdmedium-webfont.woff2') format('woff2'),
+  url('../src/assets/fonts/futurastdmedium/FuturaStdMedium.otf') format('OpenType');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'futuraStdMediumOblique';
+  src: url('../src/assets/fonts/futurastdmediumoblique/futurastdmediumoblique-webfont.woff'), url('../src/assets/fonts/futurastdmediumoblique/futurastdmediumoblique-webfont.woff2');
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'futuraStdLight';
+  src: url('../src/assets/fonts/futurastdlight/futurastdlight-webfont.woff'), url('../src/assets/fonts/futurastdlight/futurastdlight-webfont.woff2');
+  font-style: normal;
+  font-weight:lighter;
+}
+
+@font-face {
+  font-family: 'futuraStdBold';
+  src: url('../src/assets/fonts/futurastdbold/futurastdbold-webfont.woff'), url('../src/assets/fonts/futurastdbold/futurastdbold-webfont.woff2');
+  font-style: normal;
+  font-weight:bold;
+}

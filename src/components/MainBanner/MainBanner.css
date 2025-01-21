@@ -1,3 +1,5 @@
+@import url('../../global.css');
+
 .mainsection {
     width: 100%;
     height: auto;
@@ -29,6 +31,8 @@
     display: grid;
     place-content: center;
     color: var(--white);
+    background: url(/src/assets/img/mainBanner/mainBanner__bottomMobile.svg) no-repeat 100% 105%;
+    background-size: contain;
   }
   
   .videoTitle h4 {
@@ -41,15 +45,18 @@
   
   .videoTitle h4 span {
     font-family: "Instrument Serif", serif;
+    font-style: italic;
   }
   
   .videoTitle p {
+    width: 64%;
+    max-width: 263px;
     font-size: 19px;
     margin: 0 auto 20px;
-    width: 64%;
-    font-family: "Didact Gothic", serif;
+    font-family: "futuraStdLight", serif;
     line-height: 1.25em;
     text-align: center;
+    font-weight: 400;
   }
   
   .video__footer {
@@ -90,16 +97,17 @@
   .subtitle {
     width: 81%;
     color: var(--white);
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto 30px;
     font-size: 38px;
     text-align: center;
-    font-family: "Didact Gothic", serif;
+    font-family: 'futura Std Medium', serif;
   }
   
-  .subtitle span{
+  .subtitle span {
     font-family: "Instrument Serif", serif;
     letter-spacing: 5px;
+    font-style: italic;
   }
   
   .layer__button {
@@ -107,27 +115,37 @@
       height: 55px;
       margin: 0 auto;
       border-radius: 50px;
-      font-family: "Didact Gothic", serif;
+      font-family: "futura Std Medium", serif;
       font-weight: bold;
+  }
+
+  @media screen and (min-width: 540px) {
+    .videoTitle {
+      background: url(/src/assets/img/mainBanner/mainBanner__bottom.svg) no-repeat bottom center;
+      background-size: 100%;
+    }
   }
   
   @media screen and (min-width: 768px) {
-      .video__footer {
-        width: 100%;
-        height: 300px; 
-        background: url('../../assets/img/section_clip.png') repeat-x;
-        position: absolute;
-        bottom: -8em;
-      }
-
       .layer-title {
         width: 70%;
       }
+      .mainsection.video{
+        height: 1200px;
+      }
+      .videoTitle {
+        background: url(/src/assets/img/mainBanner/mainBanner__bottom.svg) no-repeat bottom center;
+        background-size: 100%;
+      }
   }
 
-  @media screen and(min-width: 1200px) {
+  @media screen and (min-width: 1200px) {
     .mainsection.video{
       height: 1200px;
+    }
+    .videoTitle {
+      background: url(/src/assets/img/mainBanner/mainBanner__bottom.svg) no-repeat bottom center;
+      background-size: 100%;
     }
   }
 

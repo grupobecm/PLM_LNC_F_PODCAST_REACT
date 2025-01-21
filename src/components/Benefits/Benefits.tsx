@@ -20,7 +20,7 @@ const Benefits:React.FC = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: "60px",
+    centerPadding: "90px",
 
     responsive: [
       {
@@ -64,7 +64,8 @@ const Benefits:React.FC = () => {
       <section className="mainsection benefits" id="benefits">
         <em className="section-label"> BENEFITS </em>
         <h3 className="section-title">
-          Why It’s Worth Living a<span> longer life and better. </span>
+          Offering knowledge 
+          <span style={{display:'block'}}> to assist in living longer. </span>
         </h3>
 
         <div className="section-description">
@@ -81,12 +82,7 @@ const Benefits:React.FC = () => {
                 <figure>
                   <img src={excercise} alt="Exercise" />
                 </figure>
-                <h5> An inclusive model </h5>
-                <div className="item-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse sodales sapien a dolor sodales, ut condimentum dui
-                  mattis.
-                </div>
+               
               </article>
             </div>
             <div>
@@ -97,13 +93,7 @@ const Benefits:React.FC = () => {
                   <img src={longevity} alt="" />
                 </figure>
 
-                <h5> More time to do less </h5>
-
-                <div className="item-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse sodales sapien a dolor sodales, ut condimentum dui
-                  mattis.
-                </div>
+                
               </article>
             </div>
             <div>
@@ -114,13 +104,7 @@ const Benefits:React.FC = () => {
                   <img src={nutrition} alt="" />
                 </figure>
 
-                <h5> Evolves with you over time </h5>
-
-                <div className="item-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse sodales sapien a dolor sodales, ut condimentum dui
-                  mattis.
-                </div>
+                
               </article>
             </div>
             <div>
@@ -130,14 +114,7 @@ const Benefits:React.FC = () => {
                 <figure>
                   <img src={selfSustainability} alt="Understanding Science" />
                 </figure>
-
-                <h5> Geared towards self-sustainability </h5>
-
-                <div className="item-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit.Suspendisse sodales sapien a dolor sodales, ut
-                  condimentum dui mattis.
-                </div>
+                
               </article>
             </div>
           </Slider>
