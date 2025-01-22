@@ -1,14 +1,5 @@
-import { useEffect, useRef } from "react";
-
 import "./aboutThird.css";
-
-
 const AboutThird = () => {
-  
-  const holderAboutRef = useRef<HTMLDivElement>(null);
-  
- 
-
   return (
     <div className="aboutThird">
       <div className="about-grid">
