@@ -1,5 +1,6 @@
 .mainsection.benefits{
   background: var(--darkBlue);
+  background-size: cover;
   padding: 3em 0;
   box-sizing: border-box;
 }
@@ -49,9 +50,6 @@
   box-sizing: border-box;
   overflow: hidden;
 }
-
-
-
 
 .section-carousel__item {
   width: 95%;
@@ -109,6 +107,7 @@
 }
 
 .benefits-footer__desk{
+  width: 100%;
   position: absolute;
   bottom: -7em;
   display: none;
@@ -161,7 +160,14 @@
 
   .section-carousel {
     max-width: inherit;
-    margin: 2em;
+    margin: 3.5em 2em;
+  }
+
+  .mainsection.benefits{
+    background: var(--darkBlue) url('../../assets/img/benefits/section-footer-desk.svg') 0 0 no-repeat;
+    background-size: cover;
+    padding: 3em 0;
+    box-sizing: border-box;
   }
 }
 

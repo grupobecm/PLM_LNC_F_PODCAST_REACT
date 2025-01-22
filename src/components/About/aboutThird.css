@@ -1,6 +1,6 @@
 .about-left.headline {
   height: 550px;
-  background: url(/src/assets/img/testimonial-6.svg) 50% 50% no-repeat;
+  background: url('../../assets/img/testimonial-6.png') 50% 50% no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -77,7 +77,7 @@
 @media screen and (min-width: 768px) {
   .about-left.headline {
     height: 100%;
-    background: url(/src/assets/img/testimonial-6-desk.svg) 50% 50% no-repeat;
+    background: url('../../assets/img/testimonial-6.png') 50% 50% no-repeat;
     background-size: cover;
     justify-content: center;
     align-items: center;
@@ -103,8 +103,6 @@
     align-items: flex-start;
   }
 
-  
-  
   .section-categories {    
     width: 90%;
     max-width: 710px;

@@ -5,7 +5,8 @@
 
 
 .about-left.blue {
-  background: var(--blue);
+  background: url('../../assets/img/testimonial-blue.png') no-repeat 0 0;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +49,8 @@
 }
 
 .about-right.brown {
-  background: var(--brown);
+  background: url('../../assets/img/testimonial-brown.png') no-repeat 0 0;
+  background-size: cover;
   display: flex;
   height: 550px;
   flex-flow: column wrap;
@@ -58,11 +60,11 @@
 }
 
 .section-label {
-  font-family: "Didact Gothic", serif;
-  font-size: 0.75rem;
+  font-family: "futuraStdLight", serif;
+  font-size: 1rem;
   display: block;
-  text-align: left;
   margin: 0 0 20px;
+  text-align: center;
 }
 
 .about-right h3 {
@@ -94,7 +96,7 @@
   box-sizing: border-box;
   display: flex;
   flex-flow: column wrap;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }
 

@@ -1,6 +1,7 @@
 .episodes-platforms {
   padding: 1em;
   box-sizing: border-box;
+  margin: 2em 0;
 }
 
 .episodes-platforms__slider {
@@ -18,7 +19,7 @@
 .episodes-platforms h5 {
   text-align: center;
   margin: 1em 0 3em;
-  font-family: 'Didact Gothic', serif;
+  font-family: 'futura Std Medium', serif;
   font-size: 1.1rem;
   font-weight: 400;
 }

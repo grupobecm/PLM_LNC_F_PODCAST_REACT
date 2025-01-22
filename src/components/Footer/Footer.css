@@ -63,3 +63,9 @@
     display: block;
   }
 }
+
+@media screen and (min-width: 1300px) {
+  .mainfooter {
+    padding: 3em 0 5em;
+  }
+}

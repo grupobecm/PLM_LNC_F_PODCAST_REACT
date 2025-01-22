@@ -1,12 +1,19 @@
 import { useEffect, useRef, useState } from "react";
-import "./MainBanner.css";
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import TextPlugin from 'gsap/TextPlugin';
 import VideoMp4 from "../../assets/video/video_banner.mp4";
 import ReactPlayer from "react-player";
 import useVideoContext from "../../hooks/useVideoContext";
+import "./MainBanner.css";
+
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 const MainBanner = () => {
   const videoRef = useRef<ReactPlayer>(null);
   const holderRef = useRef<HTMLElement>(null);
+  const subTitleRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLImageElement>(null);
   const [isPlayingVideo, setIsPlayingVideo] = useState<boolean>(true);
   const [isMuted, setIsMuted] = useState<boolean>(true);
   const { isOpenMenu } = useVideoContext();
@@ -48,6 +55,36 @@ const MainBanner = () => {
     };
   }, []);
 
+  useEffect(()=>{
+    gsap.fromTo(subTitleRef.current, {
+      'will-change': 'opacity, transform', 
+      opacity: 0,
+      scale: 0.2
+    },{
+      ease: 'back.out(1.2)',
+      opacity: 1,
+      scale: 1,
+      stagger: 1.4,
+      scrollTrigger: {
+          trigger: subTitleRef.current,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: false,
+      }
+    });
+
+    gsap.fromTo(logoRef.current, {
+      'will-change': 'opacity, transform', 
+      opacity: 0,
+      scale: 0.2,
+    },{
+      ease: 'back.out(1.2)',
+      opacity: 1,
+      scale: 1,
+      stagger: 1.4
+    });
+  },[]);
+
   return (
     <section className="mainsection video" ref={holderRef}>
       <div className="layer"></div>
@@ -56,10 +93,10 @@ const MainBanner = () => {
           {" "}
           INTRODUCING THE <span> PODCAST </span>{" "}
         </h4>
-        <h1 className="layer-title">
+        <h1 className="layer-title" ref={logoRef}>
           <img src="assets/img/header/header-img.png" alt="" />
         </h1>
-        <div className="subtitle">
+        <div className="subtitle" ref={subTitleRef}>
           Unlock the Secrets to a Longer,
           <span> Better Life. </span>
         </div>

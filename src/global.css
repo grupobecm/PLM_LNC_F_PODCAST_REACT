@@ -29,3 +29,13 @@
   font-style: normal;
   font-weight:bold;
 }
+
+@font-face {
+  font-family: 'Denton Bold';
+  src: url('../src/assets/fonts/dentonBold/denton-bold-webfont.woff') format('woff'), url('../src/assets/fonts/dentonBold/denton-bold-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Denton Light';
+  src: url('../src/assets/fonts/dentonLight/denton-light-webfont.woff') format('woff'), url('../src/assets/fonts/dentonLight/denton-light-webfont.woff2') format('woff2');
+}

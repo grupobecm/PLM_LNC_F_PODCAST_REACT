@@ -14,11 +14,11 @@ const EpisodesSlider: React.FC = () => {
         slidesToShow: 4,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: "100px",
+        centerPadding: "180px",
     
         responsive: [
           {
-            breakpoint: 1024,
+            breakpoint: 1100,
             settings: {
               centerMode: false,
               slidesToShow: 3,

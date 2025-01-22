@@ -4,6 +4,7 @@
   height: 100%;
   background-color: var(--white);
   background-image: url(/src/assets/img/menu/menu_bottom.png);
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center bottom;
   display: flex;
