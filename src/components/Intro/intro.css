@@ -146,7 +146,7 @@
   }
 }
 
-@media screen and (min-width: 700px) and (orientation: landscape) {
+@media screen and (mAX-width: 1000px) and (orientation: landscape) {
   .mobile-testimonials{
     width: 90%;
     max-width: 200px;
