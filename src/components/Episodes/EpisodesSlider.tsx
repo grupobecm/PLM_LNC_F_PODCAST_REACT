@@ -8,49 +8,47 @@ import './EpisodesSlider.css';
 
 const EpisodesSlider: React.FC = () => {
     var settings = {
-        arrows: false,
-        dots: false,
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "180px",
-    
-        responsive: [
-          {
-            breakpoint: 1100,
-            settings: {
-              centerMode: false,
-              slidesToShow: 3,
-              slidesToScroll: 1,
-              centerPadding: "80px",
-            },
+      arrows: false,
+      dots: false,
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      initialSlide: 0,
+      centerMode: true,
+      responsive: [
+        {
+          breakpoint: 1025,
+          settings: {
+            centerMode: false,
+            slidesToShow: 3,
+            slidesToScroll: 1,
           },
-          {
-            breakpoint: 768,
-            settings: {
-              centerMode: false,
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            centerMode: false,
+            slidesToShow: 2,
+            slidesToScroll: 1,
           },
-          {
-            breakpoint: 600,
-            settings: {
-              centerMode: false,
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            centerMode: false,
+            slidesToShow: 2,
+            slidesToScroll: 1,
           },
-          {
-            breakpoint: 480,
-            settings: {
-              centerMode: false,
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            centerMode: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
           },
-        ],
+        },
+      ],
       };
     return (
       <>
@@ -139,6 +137,50 @@ const EpisodesSlider: React.FC = () => {
                     </footer>
                   </div>
                 </div>
+              </div>
+
+              <div>
+                <div className="episodes-slider__item">
+                  <figure>
+                    <img src="assets/img/episodes/vittorioSebestiano.png" />
+                  </figure>
+                  <div className="episodes-slider__itemInfo">
+                    <em> Episode 4 </em>
+                    <h5> Vittorio Sebestiano (Stanford) </h5>
+
+                    <footer>
+                      <button>LISTEN NOW</button>
+
+                      <div className="time">
+                        <span> 1:45min </span>
+                        <img src="assets/img/episodes/bars.png" alt="bars" />
+                      </div>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="episodes-slider__item">
+                  <figure>
+                    <img src="assets/img/episodes/vittorioSebestiano.png" />
+                  </figure>
+                  <div className="episodes-slider__itemInfo">
+                    <em> Episode 4 </em>
+                    <h5> Vittorio Sebestiano (Stanford) </h5>
+
+                    <footer>
+                      <button>LISTEN NOW</button>
+
+                      <div className="time">
+                        <span> 1:45min </span>
+                        <img src="assets/img/episodes/bars.png" alt="bars" />
+                      </div>
+                    </footer>
+                  </div>
+                </div>
+
+                
               </div>
             </Slider>
           </div>

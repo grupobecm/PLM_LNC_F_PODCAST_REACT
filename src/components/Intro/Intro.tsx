@@ -5,31 +5,7 @@ import TestimonialsSlider from "./TestimonialsSlider";
 import FeaturedSlider from "./FeaturedSlider";
 
 const Intro = () => {
-  
   const holderIntoRef = useRef<HTMLDivElement>(null);
- /*  const [isPlayingVideoIntro, setIsPlayingVideoIntro] =
-    useState<boolean>(false); */
-
-  /* const handleScroll = () => {
-    const element = holderIntoRef.current;
-
-    if (element) {
-      const elementTop = element.offsetTop;
-      const windowHeight = window.innerHeight;
-      const scrollTop = window.scrollY;
-      if (scrollTop > 0 && scrollTop <= elementTop + element.clientHeight) {
-        setIsPlayingVideoIntro(true);
-      } else {
-        setIsPlayingVideoIntro(false);
-      }
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []); */
-
   return (
     <section className="mainsection intro" id="intro" ref={holderIntoRef}>
       <h3>
@@ -53,16 +29,14 @@ const Intro = () => {
         <aside className="first">
           <div className="testimonial-holder">
             <p>
-              Preventing disease and focusing on living well every day has
-              brought so much clarity and peace to my life.
+               The perception of aging has evolved significantly in recent years. It's not just about wrinkles, but improving our overall quality of life.
             </p>
             <footer className="author-footer">— Amara Patel</footer>
           </div>
 
           <div className="testimonial-holder">
             <p>
-              "Longevity is about quality, not just quantity. Staying active and
-              healthy is my greatest gift to myself."
+              Offering knowledge to assist in living longer and healthier, avoiding illnesses, and building a timeless community It doesn’t have to cost a fortune. You hold the key!
             </p>
             <footer className="author-footer">— Liam Carter</footer>
           </div>
@@ -75,17 +49,14 @@ const Intro = () => {
         <aside className="last">
           <div className="testimonial-holder">
             <p>
-              Longevity isn’t about just living longer—it’s about living a more
-              fulfilling life. Investing in wellness has transformed how I view
-              my future.
+              It’s about keeping our minds sharp and our bodies active. By focusing on our health, we can prevent serious diseases like Alzheimer’s, heart problems, and diabetes.
             </p>
             <footer className="author-footer">— Sophia Martins</footer>
           </div>
 
           <div className="testimonial-holder">
             <p>
-              "Embracing innovation and prioritizing health is the ultimate way
-              to ensure happiness and success in life."
+              Unlock your full potential and take control of your life with our master key! You have the power within you, all you need are the right tools to unleash it.
             </p>
             <footer className="author-footer">— Ethan Rodriguez</footer>
           </div>

@@ -10,30 +10,31 @@ import nutrition from "../../assets/img/benefits/Nutrition.png";
 import excercise from "../../assets/img/benefits/Exercise.png";
 import longevity from "../../assets/img/benefits/Longevity.png";
 import selfSustainability from "../../assets/img/benefits/Self-sustainability.png";
+import wellness from '../../assets/img/benefits/wellness.svg';
+
 import sectionFooter from "../../assets/img/benefits/section-footer.svg";
 import sectionFooterDesk from "../../assets/img/benefits/section-footer-desk.svg";
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 const Benefits: React.FC = () => {
   const titleRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null)
+  const textRef = useRef<HTMLDivElement>(null);
+  const sliderRef = useRef<any>(null);
   var settings = {
     arrows: false,
     dots: false,
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
+    initialSlide: 0,
     centerMode: true,
-    centerPadding: "90px",
-
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1025,
         settings: {
           centerMode: false,
           slidesToShow: 3,
           slidesToScroll: 1,
-          centerPadding: "80px",
         },
       },
       {
@@ -131,7 +132,7 @@ const Benefits: React.FC = () => {
         </div>
 
         <div className="section-carousel">
-          <Slider {...settings}>
+          <Slider {...settings} ref={sliderRef}>
             <div>
               <article className="section-carousel__item">
                 <em> Exercise </em>
@@ -143,9 +144,8 @@ const Benefits: React.FC = () => {
             <div>
               <article className="section-carousel__item">
                 <em> Longevity </em>
-
                 <figure>
-                  <img src={longevity} alt="" />
+                  <img src={selfSustainability} alt="" />
                 </figure>
               </article>
             </div>
@@ -160,10 +160,28 @@ const Benefits: React.FC = () => {
             </div>
             <div>
               <article className="section-carousel__item">
-                <em> Understanding Science </em>
+                <em> Sleep Quality </em>
 
                 <figure>
                   <img src={selfSustainability} alt="Understanding Science" />
+                </figure>
+              </article>
+            </div>
+            <div>
+              <article className="section-carousel__item">
+                <em> Psychological and Emotional Well-being </em>
+
+                <figure>
+                  <img src={wellness} alt="Understanding Science" />
+                </figure>
+              </article>
+            </div>
+            <div>
+              <article className="section-carousel__item">
+                <em> Brain health </em>
+
+                <figure>
+                  <img src={longevity} alt="Understanding Science" />
                 </figure>
               </article>
             </div>
