@@ -47,6 +47,11 @@
 
 .about-left.info {
   order: 2;
+  align-items: flex-start;
+}
+
+.about-left.info .section-label{
+  text-align: left;
 }
 
 .about-right.brown {
