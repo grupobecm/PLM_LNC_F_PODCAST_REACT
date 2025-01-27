@@ -44,7 +44,6 @@ const VideoSlider = () => {
     };
   }, []);
   
-  console.log({isPlayingVideo});
   return (
     <div className="video-slider" ref={holderRef}>
       <Slider {...videosSettings}>
