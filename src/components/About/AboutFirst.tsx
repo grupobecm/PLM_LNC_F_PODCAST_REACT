@@ -23,7 +23,7 @@ const AboutFirst = () => {
            </h3>
            <div className="section-resume">
              <p>
-               Unlock your potential with our platform! We believe that you hold the master key to your life, and we have the right tools to help you unlock it. Our platform connects scientific information in an easy way to understand, bringing together experts from different fields, such as scientists, doctors, technology experts, celebrities, athletes, and personalities. With our professional approach, you can learn how to make the most of your life.
+                Unlock your potential with our platform! We believe that you hold the key to a better life, and we have the necessary tools to assist you in unlocking it. Our platform brings together scientific information in a user-friendly manner, connecting experts from various fields including scientists, doctors, technology experts, celebrities, athletes, and personalities. With our professional approach, you can learn how to optimize your life.
              </p>
            </div>
           </section>

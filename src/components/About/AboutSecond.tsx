@@ -15,24 +15,10 @@ const AboutSecond = () => {
           </h3>
           <div className="section-resume">
             <p>
-              Our goal is to help people and the scientific community
-              communicate better. By sharing information and simplifying complex
-              terms, we can promote better health through preventing diseases
-              and embracing new advancements. Knowledge is crucial and I want to
-              showcase these advances to inspire and encourage the use of
-              accessible and easy-to-understand scientific technologies.
+              The concept of health should not be reserved solely for the wealthy. Our aim is to facilitate communication between people and the scientific community. By simplifying complex terminology and sharing information, we can promote better health and prevent diseases while embracing new advancements. It is essential to spread knowledge and highlight new treatments to inspire and foster the use of accessible and easily comprehensible scientific technologies.
             </p>
             <p>
-              Now with advancements, our life expectancy has nearly doubled to
-              78-80 years. The issue is that not everyone ages well, and we want
-              to change that. We want everyone to have a quality life until the
-              age of 100. Thankfully, science and biology are progressing
-              rapidly. Just like how computers went from being the size of a
-              room to fitting in our pockets, we hope to see the same kind of
-              progress with aging. We are already seeing amazing advancements in
-              lab animals, where drugs have extended life expectancy up to 50
-              years. This gives us hope that something similar can be achieved
-              for humans.
+              Now, thanks to advancements in modern medicine, the average life expectancy has increased to 78-80 years. However, the issue lies in the fact that not everyone ages gracefully. We want to change this and ensure that everyone can enjoy a high quality of life well into their 100s. Thankfully, there have been rapid developments in science and biology. Just like how computers have shrunk from the size of a room to fitting in our pockets, we anticipate similar progress in the field of aging. In fact, impressive results have been observed in lab animals, with drugs extending their life expectancy by up to 50 years. This gives us hope that similar breakthroughs can be achieved for humans.
             </p>
           </div>
         </section>
