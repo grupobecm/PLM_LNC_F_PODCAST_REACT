@@ -139,49 +139,9 @@ const EpisodesSlider: React.FC = () => {
                 </div>
               </div>
 
-              <div>
-                <div className="episodes-slider__item">
-                  <figure>
-                    <img src="assets/img/episodes/vittorioSebestiano.png" />
-                  </figure>
-                  <div className="episodes-slider__itemInfo">
-                    <em> Episode 4 </em>
-                    <h5> Vittorio Sebestiano (Stanford) </h5>
+              
 
-                    <footer>
-                      <button>LISTEN NOW</button>
-
-                      <div className="time">
-                        <span> 1:45min </span>
-                        <img src="assets/img/episodes/bars.png" alt="bars" />
-                      </div>
-                    </footer>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <div className="episodes-slider__item">
-                  <figure>
-                    <img src="assets/img/episodes/vittorioSebestiano.png" />
-                  </figure>
-                  <div className="episodes-slider__itemInfo">
-                    <em> Episode 4 </em>
-                    <h5> Vittorio Sebestiano (Stanford) </h5>
-
-                    <footer>
-                      <button>LISTEN NOW</button>
-
-                      <div className="time">
-                        <span> 1:45min </span>
-                        <img src="assets/img/episodes/bars.png" alt="bars" />
-                      </div>
-                    </footer>
-                  </div>
-                </div>
-
-                
-              </div>
+              
             </Slider>
           </div>
         </section>

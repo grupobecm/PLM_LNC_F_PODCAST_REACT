@@ -34,7 +34,8 @@ const TestimonialsSlider = () => {
       <div>
         <div className="testimonial-holder">
           <p>
-          It’s about keeping our minds sharp and our bodies active. By focusing on our health, we can prevent serious diseases like Alzheimer’s, heart problems, and diabetes.
+          It’s about keeping our minds sharp 
+          and our bodies active. By focusing on our health, we can prevent serious diseases like Alzheimer’s, heart problems, and diabetes.
           </p>
          
         </div>
