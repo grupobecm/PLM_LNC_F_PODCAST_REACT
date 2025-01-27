@@ -150,6 +150,7 @@ div[aria-hidden="true"] {
   }   
   .benefits-footer__desk{
     display: block;
+    bottom: -4em;
   }
 }
 

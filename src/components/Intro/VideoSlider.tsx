@@ -49,7 +49,7 @@ const VideoSlider = () => {
       <Slider {...videosSettings}>
         {videos.map((video, index)=>(
           <div>
-          <div className="video-holder">
+          <div key={index} className="video-holder">
             <ReactPlayer
               playing={isPlayingVideo && (currentIndex === index)}
               url={video}

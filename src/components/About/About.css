@@ -102,6 +102,9 @@
   justify-content: center;
 }
 
+.about-right.info{
+  align-items: flex-start;
+}
 
 
 .section-title {

@@ -1,7 +1,7 @@
 import "./aboutThird.css";
 const AboutThird = () => {
   return (
-    <div className="aboutThird">
+    <div className="aboutThird" id="manifesto">
       <div className="about-grid">
         <section className="about-left headline">
           <h4>

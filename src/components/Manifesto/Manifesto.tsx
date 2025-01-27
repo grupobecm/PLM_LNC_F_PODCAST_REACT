@@ -61,7 +61,7 @@ const Manifesto = () => {
    
     return (
       <>
-        <section className="mainsection manifesto" id="manifesto">
+        <section className="mainsection manifesto">
           <h3 className="manifestoHeadline" ref={footerTitleRef}>
             "It's all about the balance and,
             <em> incredible moments in life." </em>

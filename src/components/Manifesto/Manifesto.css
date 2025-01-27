@@ -158,6 +158,12 @@ input[type="checkbox"] {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .manifesto-footer__desk{
+    bottom: -0.5em;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   
   .conditions{
@@ -165,5 +171,7 @@ input[type="checkbox"] {
     flex-flow: row wrap;
     justify-content: space-evenly;
   }
+
+ 
 }
 

@@ -11,7 +11,7 @@ import excercise from "../../assets/img/benefits/Exercise.png";
 import longevity from "../../assets/img/benefits/Longevity.png";
 import selfSustainability from "../../assets/img/benefits/Self-sustainability.png";
 import wellness from '../../assets/img/benefits/wellness.svg';
-
+import sleepQuality from '../../assets/img/benefits/sleep_quality.jpg'
 import sectionFooter from "../../assets/img/benefits/section-footer.svg";
 import sectionFooterDesk from "../../assets/img/benefits/section-footer-desk.svg";
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
@@ -26,7 +26,7 @@ const Benefits: React.FC = () => {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    initialSlide: 0,
+    initialSlide: 2,
     centerMode: true,
     responsive: [
       {
@@ -163,7 +163,7 @@ const Benefits: React.FC = () => {
                 <em> Sleep Quality </em>
 
                 <figure>
-                  <img src={selfSustainability} alt="Understanding Science" />
+                  <img src={sleepQuality} alt="Understanding Science" />
                 </figure>
               </article>
             </div>

@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 import ericVerdinVideo from "../../assets/video/episodes/eric_verdin.mov";
 import "./Menu.css";
 import useVideoContext from "../../hooks/useVideoContext";
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 const Menu: React.FC = () => {
   
@@ -31,7 +32,7 @@ const Menu: React.FC = () => {
     if(videoHolderRef.current){
       videoHolderRef.current?.addEventListener('click',handleClick );
     }
-  })
+  },[]);
 
   useEffect(() => {
     return () => {
@@ -41,11 +42,16 @@ const Menu: React.FC = () => {
     };
   }, [isOpenMenu]);
 
+  
+
   const handleScroll = (id:string) => {
-    const element = document.getElementById(id);
-    if(element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    const section = document.getElementById(id);
+    if (section) {
       handleToggleMenu();
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -71,14 +77,14 @@ const Menu: React.FC = () => {
                 </div>
                 <ul>
                   {navLinks.map((link) => (
-                    <li key={link.id}>
+                     <li key={link.id}>
                       <a
                         href={`#${link.id}`}
                         onClick={() => handleScroll(link.id)}
                       >
                         {link.text}
                       </a>
-                    </li>
+                    </li> 
                   ))}
                 </ul>
               </section>
