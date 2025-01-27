@@ -3,7 +3,6 @@ import ReactPlayer from "react-player";
 import ericVerdinVideo from "../../assets/video/episodes/eric_verdin.mov";
 import "./Menu.css";
 import useVideoContext from "../../hooks/useVideoContext";
-import { Link, animateScroll as scroll } from 'react-scroll';
 
 const Menu: React.FC = () => {
   
