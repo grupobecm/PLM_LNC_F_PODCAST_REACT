@@ -28,11 +28,11 @@
 
 .intro h3{
   width: 90%;
-  max-width: 422px;
+  max-width: 822px;
   text-align: center;
   font-family: "futura Std Medium", serif;
   font-size: 2rem;
-  margin: 0 auto 1.5em;
+  margin: 0 auto 0.5em;
   font-weight: 400;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .intro-txt{
-  max-width: 615px;
+  max-width: 675px;
   text-align: center;
   font-family: "futura Std Medium", serif;
   font-size: 1.25rem;

@@ -140,10 +140,6 @@
   object-fit: cover;
 }
 
-div[aria-hidden="true"] {
-  opacity: 0.5;
-}
-
 @media screen and (min-width: 600px) {
   .benefits-footer__mobile {
     display: none;
@@ -192,9 +188,7 @@ div[aria-hidden="true"] {
     margin: 0 0 -2.5% auto;
   }
   
-  div[aria-hidden="true"] {
-    opacity: 0.5;
-  }
+  
 
   .mainsection.benefits{
     background: var(--darkBlue) url('../../assets/img/benefits/section-footer-desk.svg') 0 0 no-repeat;
@@ -205,13 +199,4 @@ div[aria-hidden="true"] {
 }
 
 
-
-@media screen and (min-width: 1600px) {
-
-  
-
-  div[aria-hidden="true"] {
-    opacity: 0.5;
-  }
-}
 
