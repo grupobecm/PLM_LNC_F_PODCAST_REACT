@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import TextPlugin from 'gsap/TextPlugin';
-import ericVerdinVideo from '../../assets/video/episodes/eric_verdin.mov';
 import './Episodes.css';
 import EpisodesPlatforms from './EpisodesPlatforms';
 import EpisodesSlider from './EpisodesSlider';
+
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -98,9 +98,6 @@ const Episodes = () => {
                   </span>
                </div>
             </div>
-            <video>
-                <source src={ericVerdinVideo}  />
-            </video>
         </div>
 
         <EpisodesSlider />
