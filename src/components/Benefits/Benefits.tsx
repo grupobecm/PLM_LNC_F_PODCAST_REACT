@@ -22,11 +22,12 @@ const Benefits: React.FC = () => {
   const sliderRef = useRef<any>(null);
   var settings = {
     arrows: false,
-    dots: false,
+    dots: true,
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    initialSlide: 2,
+    dragablle:true,
+    initialSlide: 0,
     centerMode: true,
     responsive: [
       {
