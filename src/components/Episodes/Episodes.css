@@ -207,3 +207,9 @@ section.mainsection.episodes .section-title span {
     transform: translateX(0);
   }
 }
+
+@media screen and (min-width: 1680px) {
+  .episodes-video {
+    height: 750px;
+  }
+}
