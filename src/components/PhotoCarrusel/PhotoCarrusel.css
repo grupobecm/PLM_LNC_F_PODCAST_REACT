@@ -8,6 +8,26 @@
   cursor: move;
 }
 
+.carousel-holder .swiper-pagination {
+  position: absolute;
+  bottom: -2em;
+  right: -4em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.carousel-holder 
+.swiper-pagination 
+.swiper-pagination-bullet {  
+  background: white;
+}
+
+.carousel-holder 
+.swiper-pagination 
+.swiper-pagination-bullet-active {
+  background: white;
+}
+
 
 @media screen and (min-width: 768px) {
   .card {
