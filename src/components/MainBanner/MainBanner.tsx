@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import TextPlugin from 'gsap/TextPlugin';
-import VideoMp4 from "../../assets/video/video_banner.mp4";
+import { PlayCircleFilled, CloseCircleOutlined } from "@ant-design/icons";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import TextPlugin from "gsap/TextPlugin";
+import Modal from "react-modal";
 import ReactPlayer from "react-player";
 import useVideoContext from "../../hooks/useVideoContext";
 import "./MainBanner.css";
@@ -14,76 +15,61 @@ const MainBanner = () => {
   const holderRef = useRef<HTMLElement>(null);
   const subTitleRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
-  const [isPlayingVideo, setIsPlayingVideo] = useState<boolean>(true);
+  const [isPlayingVideo, setIsPlayingVideo] = useState<boolean>(false);
   const [isMuted, setIsMuted] = useState<boolean>(true);
   const { isOpenMenu } = useVideoContext();
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
-  const handleScroll = () => {
-    const element = holderRef.current;
-    if (element) {
-      const rect = element.getBoundingClientRect();
-      if (rect.top === 0) {
-        setIsPlayingVideo(true);
-        setIsMuted(false);
-      } else {
-        setIsPlayingVideo(false);
-        setIsMuted(true);
-      }
-    }
-  };
-
-  const handleDocumentClick = () => {
-    setIsMuted(!isMuted);
-  };
-
-  const handleReady = () => {
-    setIsPlayingVideo(true);
-  };
-
+  
   useEffect(() => {
-    if (holderRef.current && isOpenMenu === false) {
-      holderRef.current?.addEventListener("click", handleDocumentClick);
-    }
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("click", handleDocumentClick);
-      setIsPlayingVideo(false);
-    };
-  }, []);
-
-  useEffect(()=>{
-    gsap.fromTo(subTitleRef.current, {
-      'will-change': 'opacity, transform', 
-      opacity: 0,
-      scale: 0.2
-    },{
-      ease: 'back.out(1.2)',
-      opacity: 1,
-      scale: 1,
-      stagger: 1.4,
-      scrollTrigger: {
+    gsap.fromTo(
+      subTitleRef.current,
+      {
+        "will-change": "opacity, transform",
+        opacity: 0,
+        scale: 0.2,
+      },
+      {
+        ease: "back.out(1.2)",
+        opacity: 1,
+        scale: 1,
+        stagger: 1.4,
+        scrollTrigger: {
           trigger: subTitleRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
+          start: "top bottom",
+          end: "bottom top",
           scrub: false,
+        },
       }
-    });
+    );
 
-    gsap.fromTo(logoRef.current, {
-      'will-change': 'opacity, transform', 
-      opacity: 0,
-      scale: 0.2,
-    },{
-      ease: 'back.out(1.2)',
-      opacity: 1,
-      scale: 1,
-      stagger: 1.4
-    });
-  },[]);
+    gsap.fromTo(
+      logoRef.current,
+      {
+        "will-change": "opacity, transform",
+        opacity: 0,
+        scale: 0.2,
+      },
+      {
+        ease: "back.out(1.2)",
+        opacity: 1,
+        scale: 1,
+        stagger: 1.4,
+      }
+    );
+  }, []);
+
+  const handleOpenModal = () => {
+    setIsOpenModal(true);
+    setIsPlayingVideo(true);
+    setIsMuted(false);
+  };
+
+  const handleCloseModal = () => {
+    setIsOpenModal(false);
+    setIsPlayingVideo(false);
+    setIsMuted(true);
+  };
 
   return (
     <section className="mainsection video" ref={holderRef}>
@@ -107,18 +93,45 @@ const MainBanner = () => {
         <button className="layer__button">DISCOVER PODCAST</button>
       </div>
       <div className="mainsection__video">
-        <ReactPlayer
-          ref={videoRef}
-          playing={isPlayingVideo === true && isOpenMenu === false}
-          url={VideoMp4}
-          width="100%"
-          height="100%"
-          onReady={handleReady}
-          volume={1}
-          muted={isMuted}
-        />
+        <button onClick={() => handleOpenModal()}>
+          <PlayCircleFilled />
+        </button>
+
+        <Modal
+          isOpen={isOpenModal}
+          onRequestClose={handleCloseModal}
+          style={{
+            overlay: {
+              backgroundColor: "rgba(0, 0, 0, 0.75)",
+            },
+            content: {
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "80%",
+              maxWidth: "800px",
+              height: "auto",
+              maxHeight: "960px",
+              padding: "0",
+            },
+          }}
+        >
+          <ReactPlayer
+            ref={videoRef}
+            playing={isPlayingVideo === true && isOpenMenu === false}
+            url={"https://youtu.be/M8zK6HWi2wA?feature=shared"}
+            controls={false}
+            width="100%"
+            height="100%"
+            volume={1}
+            muted={isMuted}
+          />
+          <button onClick={handleCloseModal} className="btn-close">
+            <CloseCircleOutlined />
+          </button>
+        </Modal>
       </div>
-      {/* <footer className="video__footer"></footer> */}
     </section>
   );
 };
