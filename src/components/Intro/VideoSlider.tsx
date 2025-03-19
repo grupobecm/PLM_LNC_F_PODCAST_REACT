@@ -1,20 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import ReactPlayer from "react-player";
 import Slider from "react-slick";
-import {
-  PauseCircleFilled,
-  PlayCircleFilled
-} from '@ant-design/icons';
-import VideoIntro from "../../assets/video/video_intro.mp4";
+import { PauseCircleFilled, PlayCircleFilled } from "@ant-design/icons";
 
 const VideoSlider = () => {
-  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isMuted, setIsMuted] = useState<boolean>(true);
   const holderRef = useRef<HTMLDivElement>(null);
   const videoRefs = useRef<ReactPlayer[]>([]);
 
-  const handleScroll = () => {
+  /* const handleScroll = () => {
     const element = holderRef.current;
     if (element) {
       const elementTop = element.offsetTop;
@@ -26,9 +22,11 @@ const VideoSlider = () => {
         setIsPlaying(false);
       }
     }
-  };
+  }; */
 
-  const videos = [VideoIntro, VideoIntro];
+  const videos = [
+    "https://landingpagespolimentes.s3.us-east-2.amazonaws.com/elen_capri/the_master_key/video_intro.mp4",
+  ];
   var videosSettings = {
     arrows: false,
     dots: true,
@@ -51,9 +49,7 @@ const VideoSlider = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
       setCurrentIndex(null);
     };
   }, []);
@@ -65,15 +61,19 @@ const VideoSlider = () => {
           <div key={`holder-${index}`}>
             <div key={index} className="video-holder">
               <ReactPlayer
-                onPlay={() => {
+                /* onPlay={() => {
                   if (index === currentIndex) {
                     setIsMuted(false);
                   } else {
                     setIsMuted(true);
                   }
+                }} */
+                onPlay={() => {
+                  setIsMuted(false);
                 }}
                 ref={(el) => (videoRefs.current[index] = el!)}
-                playing={isPlaying === true && index === currentIndex}
+                //playing={isPlaying === true && index === currentIndex}
+                playing={isPlaying === true}
                 url={video}
                 width="100%"
                 height="87%"
@@ -82,13 +82,23 @@ const VideoSlider = () => {
 
               <footer className="video-slider__bottoms">
                 {isPlaying && (
-                  <button onClick={() => setIsPlaying(false)}>
+                  <button
+                    onClick={() => {
+                      setIsPlaying(false);
+                      setIsMuted(true);
+                    }}
+                  >
                     <PauseCircleFilled />
                   </button>
                 )}
 
                 {!isPlaying && (
-                  <button onClick={() => setIsPlaying(true)}>
+                  <button
+                    onClick={() => {
+                      setIsPlaying(true);
+                      setIsMuted(false);
+                    }}
+                  >
                     {" "}
                     <PlayCircleFilled />
                   </button>
