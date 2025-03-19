@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import { PauseCircleFilled, PlayCircleFilled } from "@ant-design/icons";
 
 const VideoSlider = () => {
-  const [currentIndex, setCurrentIndex] = useState<number | null>(0);
+  //const [currentIndex, setCurrentIndex] = useState<number | null>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isMuted, setIsMuted] = useState<boolean>(true);
   const holderRef = useRef<HTMLDivElement>(null);
@@ -36,7 +36,7 @@ const VideoSlider = () => {
     slidesToScroll: 1,
     centerMode: false,
     afterChange: (index: number) => {
-      setCurrentIndex(index);
+      //setCurrentIndex(index);
       videoRefs.current.forEach((player, i) => {
         if (i === index) {
           player.getDuration();
@@ -48,11 +48,11 @@ const VideoSlider = () => {
     },
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     return () => {
       setCurrentIndex(null);
     };
-  }, []);
+  }, []); */
 
   return (
     <div className="video-slider" ref={holderRef}>
