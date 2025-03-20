@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import ReactPlayer from "react-player";
 import Slider from "react-slick";
 import { PauseCircleFilled, PlayCircleFilled } from "@ant-design/icons";
